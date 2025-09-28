@@ -1,0 +1,33 @@
+# Run on every push to main; tweak as needed
+trigger:
+  branches:
+    include:
+      - main
+# Optional PR validation
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'  # Microsoft-hosted Ubuntu
+
+steps:
+  - checkout: self
+
+  # Ensure a specific Python version is on PATH
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.11'
+      addToPath: true
+
+  # (Optional) install deps if you add requirements.txt later
+  - script: |
+      python --version
+      pip --version
+      if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    displayName: Setup Python & deps
+
+  # Run your script
+  - script: python helloworld.py
+    displayName: Run hello world
