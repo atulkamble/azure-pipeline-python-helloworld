@@ -3,7 +3,12 @@
 # 1) Repo layout
 
 ```
-your-repo/
+git clone azure-pipeline-python-helloworld
+cd azure-pipeline-python-helloworld
+```
+
+```
+azure-pipeline-python-helloworld/
 ├─ helloworld.py
 └─ azure-pipelines.yml
 ```
