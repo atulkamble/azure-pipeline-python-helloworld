@@ -1,7 +1,5 @@
 # azure-pipeline-python-helloworld
 
-Gotcha, Atul! Here’s a minimal, copy-paste Azure Pipelines setup to run a Python `helloworld.py` on Ubuntu.
-
 # 1) Repo layout
 
 ```
@@ -79,5 +77,3 @@ steps:
     demands:
     - Agent.OS -equals Linux
   ```
-
-That’s it—super lightweight and works out of the box on Microsoft-hosted Ubuntu. Want me to add a pytest job or artifact publish step next?
